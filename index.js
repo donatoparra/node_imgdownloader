@@ -19,8 +19,7 @@ var server = http.createServer(function(req, res) {
         req.on('end', function() {        
             
             var str = body.toString('utf8');
-            var payload = JSON.parse(JSON.parse(str));
-
+            var payload = JSON.parse(str);
             const download = (res, url, path, callback) => {
                 
                 request.head(url, (err, response, body) => {
